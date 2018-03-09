@@ -35,7 +35,6 @@ def valid_move?(board, index)
 end
 
 def turn(board)
-  until full?(board) == true
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
@@ -45,7 +44,6 @@ def turn(board)
     else
       turn(board)
     end
-  end
 end
 
 def turn_count(board)
