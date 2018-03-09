@@ -97,11 +97,14 @@ def winner(board)
   end
 end
 
-# Define your play method below
-def play(board)
-  counter = 0
-  until counter == 9
-    turn(board)
-    counter += 1
+def play
+    while !over?(board)
+      turn(board)
+    end
+    if won?(board)
+      puts "Congratulations #{winner(board)}!"
+    elsif draw?(board)
+      puts "Cats Game!"
+    end
   end
-end
+
